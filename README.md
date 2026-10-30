@@ -1,16 +1,64 @@
-# ayat
+# Download-Music
 
-A new Flutter project.
+A music downloader with streaming downloads and local persistence.
+
+## Highlights
+
+- Streaming downloads with `dio`, with progress reported to the user.
+- Files written to local storage through `path_provider`.
+- Hive used for lightweight key-value persistence of app state.
+- Runtime permissions handled for storage and network access.
+
+## Tech Stack
+
+| Concern | Choice |
+|---|---|
+| UI | Flutter, Material |
+| State management | `provider` |
+| Networking | `dio` |
+| Persistence | `hive`, `hive_flutter` |
+| Files | `path_provider` |
+| Permissions | `permission_handler` |
+
+## Project Structure
+
+```
+lib/
+- `Services`
+- `downloading_dialog.dart`
+- `localization`
+- `model`
+- `provider`
+- `screen`
+- `widgets`
+```
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter `>= 3.16` (Dart `>= 3.2`)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Run
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/developer-rahim/Download-Music.git
+cd Download-Music
+flutter pub get
+flutter run
+```
+
+### Test
+
+```bash
+flutter test
+flutter analyze
+```
+
+## Notes
+
+Downloads land in the app's documents directory — not the shared music library — so no additional storage permission is needed on most Android versions.
+
+## License
+
+Released under the MIT License.
